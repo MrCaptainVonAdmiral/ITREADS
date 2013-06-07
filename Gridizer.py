@@ -33,11 +33,7 @@ for i in xrange(Row):
             GS[i][j]=0
         #print GS[i][j]
 
+for i in GS:
+    print repr(i)
 
-        
-for i in xrange(Row):
-    Hold=""
-    for j in xrange(Col):
-        Hold = str(GS[i][j]) + Hold
-    print Hold
 time.sleep(2)
