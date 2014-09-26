@@ -1,28 +1,28 @@
 import ImageGrab, ImageDraw, time, Image
 
 #Bound box coords
-y1, y2, x1, x2 = 605, 645, 50, 80
+y1, y2, x1, x2 = 550, 700, 50, 75
 
-Row = y2 - y1
-Col = x2 - x1
+Col2 = y2 - y1
+Row2 = x2 - x1
 
 TL=[x1,y1]
 BR=[x2,y2]
 print TL, BR
 color=list(list())
 GS=list(list())
-for k in xrange(Col):
+for k in xrange(Row2):
     temp_list=list()
-    for q in xrange(Row):
+    for q in xrange(Col2):
         temp_list.append(0)
     color.append(temp_list)
     GS.append(temp_list)
 
 image = ImageGrab.grab()
-for i in xrange(Col):
+for i in xrange(Row2):
     Col_Read=i+x1
     #print Row_Read
-    for j in xrange(Row):
+    for j in xrange(Col2):
         Row_Read=y1+j
         #print Col_Read
         color[i][j] = image.getpixel((Row_Read, Col_Read))
@@ -39,9 +39,9 @@ for i in xrange(Col):
 #for i in GS:
 #    print repr(i)
     
-for i in xrange(Col):
+for i in xrange(Row2):
     Hold=""
-    for j in xrange(Row):
+    for j in xrange(Col2):
         Hold = Hold + str(GS[i][j])
     print Hold
 time.sleep(2)
